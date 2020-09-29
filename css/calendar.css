@@ -1,0 +1,75 @@
+.calendar {
+}
+.calendar .head {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.calendar .content .row {
+  display: flex;
+}
+
+.calendar .content .row .column {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.Monday, .Tuesday, .Wednesday, .Thursday, .Friday, .Saturday, .Sunday {
+  font-size: 16px;
+}
+
+.Saturday, .Sunday {
+  color: red;
+}
+.content .week {
+  /* margin-bottom: 5px; */
+  border-bottom: solid 1px #5af;
+}
+.content .month {
+  border-bottom: solid 1px #5af;
+  height: 50px;
+}
+.month .column {
+  border: 3px solid white;
+  font-size: 18px;
+  margin: 0 0.5px;
+  position: relative;
+}
+.month .column .todo-list-count {
+  position: absolute;
+  font-size: 12px;
+  right: 5px;
+  top: 2px;
+}
+.month .column:hover {
+  cursor: pointer;
+  border: 3px solid coral;
+}
+
+.month .click-active {
+  border: 3px solid coral !important;
+}
+
+.month .today {
+  /* border: 1px solid coral;
+  border-radius: 50%; */
+  color: white;
+  background-color: coral;
+  border-color: coral;
+}
+.week-day {
+  color: coral;
+}
+
+.calendar #next-month-btn:hover {
+  cursor: pointer;
+}
+
+.calendar #pre-month-btn:hover {
+  cursor: pointer;
+}

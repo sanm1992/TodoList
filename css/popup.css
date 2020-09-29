@@ -1,0 +1,102 @@
+.todo-con {
+  padding: 10px;
+  border: solid 2px #5af;
+  border-radius: 5px;
+  min-height: 359px;
+}
+#h-date {
+  display: inline-block;
+  margin: 0;
+}
+
+#pre-btn, #latter-btn {
+  float: right;
+  padding: 0 10px;
+}
+
+#pre-btn:hover, #latter-btn:hover {
+  cursor: pointer;
+}
+
+#list-content {
+  margin: 10px 0;
+}
+
+#list-content li {
+  display: flex;
+  margin: 3px 0;
+}
+
+#list-content li .checkbox {
+  flex: 1;
+}
+
+#list-content li .content {
+  flex: 9;
+}
+
+#list-content li .operation-btns {
+  flex: 2;
+  text-align: right;
+}
+
+#list-content li .operation-btns .btn {
+  cursor: pointer;
+}
+
+#list-content li .operation-btns .destroy-btn {
+  color: #f91f1f;
+}
+
+#list-content .add-row {
+  text-align: right;
+}
+
+.list-operation {
+  display: flex;
+  background-color: #e2f2ff;
+  border-bottom: 1px solid #5af;
+  margin-bottom: 10px;
+}
+
+.list-operation .item {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.list-operation .pre-btn {
+  justify-content: flex-start;
+  padding-left: 0;
+}
+.list-operation #list-today {
+  font-size: 14px;
+}
+
+.list-operation #list-all-btn {
+  justify-content: flex-end;
+}
+
+.list-operation #list-all-btn:hover {
+  cursor: pointer;
+}
+
+.list-operation .next-btn {
+  justify-content: flex-end;
+  padding-right: 0;
+}
+
+#add-content, .add-row {
+  text-align: right;
+  color: #5af;
+}
+
+
+#add-content .add-row .add-btn {
+  cursor: pointer;
+}
+
+#new-content .new-input {
+  width: 100%;
+}
