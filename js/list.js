@@ -87,8 +87,7 @@ let list = (function() {
     let listDate = document.getElementById('list-today').dataset
 
     if (!newItemContent) {
-      // newIteminput.style.borderColor = 'red'
-      newIteminput.placeholder = '不能为空'
+      newIteminput.style.borderColor = 'red'
       return
     }
 
