@@ -1,5 +1,5 @@
 # TodoList
-简单的todo list
+简单的 Google 插件
 
 # 存储
 Local Storage
