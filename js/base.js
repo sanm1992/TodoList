@@ -102,11 +102,11 @@
     return (new Date()).valueOf()
   }
   // 整型转字符串, 前置填充
-  const PrefixInteger = function(num, len, fill="0") {
+  const prefixInteger = function(num, len, fill="0") {
     return (Array(len).join(fill) + num).slice(-len);
   }
 
-  $.PrefixInteger = PrefixInteger;
+  $.prefixInteger = prefixInteger;
   $.getWeekDay = getWeekDay;
   $.getMonthDays = getMonthDays;
   $.isLeapYear = isLeapYear;

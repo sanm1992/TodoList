@@ -120,14 +120,10 @@ todoListData.prototype = {
   },
 
   formatKey:function(year, month, day) {
-    let _month = this.PrefixInteger(month, 2)
-    let _day = this.PrefixInteger(day, 2)
+    let _month = Window.prefixInteger(month, 2)
+    let _day = Window.prefixInteger(day, 2)
 
     return year+"-"+_month+"-"+_day
-  },
-
-  PrefixInteger:function(num, len) {
-    return (Array(len).join('0') + num).slice(-len);
   }
 }
 // Window.todoListData = todoListData

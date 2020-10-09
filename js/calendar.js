@@ -188,7 +188,7 @@ Calendar.prototype = {
       index = i + 1;
 
       let toDayClass = '';
-      let key = year+"-"+Window.PrefixInteger(month, 2)+"-"+Window.PrefixInteger(item, 2)
+      let key = year+"-"+Window.prefixInteger(month, 2)+"-"+Window.prefixInteger(item, 2)
       let listCount = this.listStatistacs[key]
 
       if (thisYear === year && thisMonth === month && thisDay === item) {
