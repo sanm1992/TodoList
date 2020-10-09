@@ -8,7 +8,6 @@ todoListData.prototype = {
   },
 
   getData:function(year=null, month=null, day=null) {
-    let key = year+"-"+month+"-"+day
     let data = localStorage.getItem(this.keyName);
     if (!data) {
       return {};
@@ -18,27 +17,28 @@ todoListData.prototype = {
     if (!year || !month || !day) {
       return this.sortData(data, 'desc')
     }
-
+    let key = this.formatKey(year, month, day)
     return  this.sortData(data[key], 'desc')
   },
   getStatistics:function(year, month, day=null) {
     let data = localStorage.getItem(this.keyName);
     data = JSON.parse(data)
     if (day) {
-      let key = year+"-"+month+"-"+day
+      let key = this.formatKey(year, month, day)
       let count = Object.keys(data[key]).length
       return { date: key, count: count }
     } else {
       let days = Window.getMonthDays(year, month).length
       let rtn = {}
       for( var i = 1; i < days+1; i++) {
-        let key = year+"-"+month+"-"+i
+        let key = this.formatKey(year, month, i)
         if (data[key]) {
           rtn[key] = Object.keys(data[key]).length
         } else {
           rtn[key] = 0
         }
       }
+
       return rtn
     }
   },
@@ -47,7 +47,7 @@ todoListData.prototype = {
     if (!oldData) {
       oldData = {}
     }
-    let key = year+"-"+month+"-"+day
+    let key = this.formatKey(year, month, day)
     if (!oldData[key]) {
       oldData[key] = {}
     } 
@@ -56,7 +56,7 @@ todoListData.prototype = {
     return oldData
   },
   deleteData:function(dataId, year=null, month=null, day=null) {
-    let key = year+"-"+month+"-"+day
+    let key = this.formatKey(year, month, day)
     let data = JSON.parse(localStorage.getItem(this.keyName));
 
     if(!data || !data[key]){
@@ -70,7 +70,7 @@ todoListData.prototype = {
   },
 
   updateData:function(dataId, updateOptions, year, month, day) {
-    let key = year+"-"+month+"-"+day
+    let key = this.formatKey(year, month, day)
     let data = JSON.parse(localStorage.getItem(this.keyName));
 
     if(!data || !data[key]){
@@ -117,6 +117,17 @@ todoListData.prototype = {
       newData[key] = data[key]
     } 
     return newData
+  },
+
+  formatKey:function(year, month, day) {
+    let _month = this.PrefixInteger(month, 2)
+    let _day = this.PrefixInteger(day, 2)
+
+    return year+"-"+_month+"-"+_day
+  },
+
+  PrefixInteger:function(num, len) {
+    return (Array(len).join('0') + num).slice(-len);
   }
 }
 // Window.todoListData = todoListData
