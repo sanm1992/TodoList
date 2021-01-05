@@ -22,7 +22,7 @@ todoListData.prototype = {
   },
   getStatistics:function(year, month, day=null) {
     let data = localStorage.getItem(this.keyName);
-    data = JSON.parse(data)
+    data = JSON.parse(data) || {}
     if (day) {
       let key = this.formatKey(year, month, day)
       let count = Object.keys(data[key]).length

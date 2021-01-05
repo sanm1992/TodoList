@@ -25,6 +25,7 @@
 #list-content li {
   display: flex;
   margin: 3px 0;
+  align-items: center;
 }
 
 #list-content li .checkbox {
